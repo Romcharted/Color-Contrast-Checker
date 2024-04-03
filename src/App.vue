@@ -1,30 +1,78 @@
-<script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
-</script>
-
 <template>
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
-  </div>
-  <HelloWorld msg="Vite + Vue" />
+    <div class="app-container">
+        <h1>Color Contrast Checker</h1>
+        <p class="app-desc">
+            Calculate the contrast ratio of text and background colors.
+        </p>
+
+        <div class="explain-container">
+            <h3>How does it work?</h3>
+            <p>
+                This tool follows the Web Content Accessibility Guidelines
+                (WCAG), which are a series of recommendations for making the web
+                more accessible.<br />
+
+                Regarding colors, the standard defines two levels of contrast
+                ratio: AA (minimum contrast) and AAA (enhanced contrast).<br />
+
+                The level AA requires a contrast ratio of at least 4.5:1 for
+                normal text and 3:1 for large text (at least 18pt) or bold
+                text.<br />
+
+                The level AAA requires a contrast ratio of at least 7:1 for
+                normal text and 4.5:1 for large text or bold text.<br />
+            </p>
+
+            <a
+                href="https://en.wikipedia.org/wiki/Web_Content_Accessibility_Guidelines"
+                target="_blank"
+                >Learn more</a
+            >
+        </div>
+    </div>
 </template>
 
-<style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+<script setup lang="ts"></script>
+
+<style>
+.app-container {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    width: 100%;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+
+    font-family: "Inter", sans-serif;
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+
+h1 {
+    font-size: 50px;
+    margin-bottom: 30px;
+    font-weight: 900;
+    color: var(--main-color);
 }
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
+
+.app-desc {
+    font-size: 20px;
+    color: var(--text-color-light);
+}
+
+.explain-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 20px;
+}
+
+.explain-container h3 {
+    font-size: 24px;
+    font-weight: 900;
+}
+
+.explain-container a {
+    color: #0066ff;
 }
 </style>
