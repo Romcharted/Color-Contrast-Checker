@@ -5,6 +5,8 @@
             Calculate the contrast ratio of text and background colors.
         </p>
 
+        <ContrastChecker />
+
         <div class="explain-container">
             <h3>How does it work?</h3>
             <p>
@@ -32,7 +34,9 @@
     </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import ContrastChecker from "@/components/ContrastChecker.vue";
+</script>
 
 <style>
 .app-container {
@@ -52,11 +56,13 @@ h1 {
     margin-bottom: 30px;
     font-weight: 900;
     color: var(--main-color);
+    text-align: center;
 }
 
 .app-desc {
     font-size: 20px;
     color: var(--text-color-light);
+    text-align: center;
 }
 
 .explain-container {
