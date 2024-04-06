@@ -1,8 +1,14 @@
 <template>
-    <div class="contrast-checker-content"></div>
+    <div class="contrast-checker-content">
+        <InputHexaColor />
+        <InputHexaColor />
+    </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { ref } from "vue";
+import InputHexaColor from "./InputHexaColor.vue";
+</script>
 
 <style>
 .contrast-checker-content {

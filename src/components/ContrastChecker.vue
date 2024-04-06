@@ -20,6 +20,7 @@ import ContrastCheckerPreview from "./ContrastCheckerPreview.vue";
     justify-content: center;
     margin: 100px 0;
     width: 100%;
+    max-width: 1200px;
 }
 
 @media screen and (max-width: 764px) {
