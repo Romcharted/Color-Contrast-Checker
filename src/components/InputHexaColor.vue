@@ -1,18 +1,26 @@
 <template>
     <div class="input-hexa-color">
+        <label>{{ title }}</label>
         <input
+            type="text"
             v-model="color"
             @keyup.enter="verificationEntry"
             @blur="verificationEntry"
         />
-        {{ color }}
     </div>
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
+import { ref, defineEmits } from "vue";
 
-let color = ref("");
+const props = defineProps({
+    defaultValue: String,
+    title: String,
+});
+
+const emit = defineEmits(["colorChanged"]);
+
+let color = ref(props.defaultValue || "");
 
 const verificationEntry = () => {
     // Supprimer les caractères non hexadécimaux
@@ -34,8 +42,7 @@ const verificationEntry = () => {
 
     // Si c'est tout bon, on donne la valeur au parent
     if (color.value.length == 7) {
-    } else {
-        // mettre un message en rouge pour dire que la couleur n'est pas valide
+        emit("colorChanged", color.value);
     }
 };
 
@@ -48,3 +55,36 @@ const expandShortHex = (hex: string): string => {
     return hex;
 };
 </script>
+
+<style>
+.input-hexa-color {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    width: 100%;
+}
+
+.input-hexa-color label {
+    color: black;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.input-hexa-color input {
+    border-radius: 10px;
+    height: 46px;
+    padding: 0 50px 0 14px;
+    font-size: 15px;
+    transition: border 0.1s;
+    border: 1px solid #d8d8da !important;
+    width: 100%;
+    color: black !important;
+    font-family: "Inter", sans-serif;
+}
+
+.input-hexa-color input:focus,
+.input-hexa-color input:focus-visible {
+    outline: none;
+    border: 1px solid #0066ff !important;
+}
+</style>

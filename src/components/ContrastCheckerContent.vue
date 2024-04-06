@@ -1,13 +1,33 @@
 <template>
     <div class="contrast-checker-content">
-        <InputHexaColor />
-        <InputHexaColor />
+        <div class="input-container">
+            <InputHexaColor
+                title="Text Color"
+                defaultValue="#FFFFFF"
+                @colorChanged="updateTextColor"
+            />
+            <InputHexaColor
+                title="Background Color"
+                defaultValue="#000000"
+                @colorChanged="updateBackgroundColor"
+            />
+        </div>
     </div>
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
+import { defineEmits } from "vue";
 import InputHexaColor from "./InputHexaColor.vue";
+
+const emit = defineEmits(["textColorChanged", "backgroundColorChanged"]);
+
+const updateTextColor = (newColor: string) => {
+    emit("textColorChanged", newColor);
+};
+
+const updateBackgroundColor = (newColor: string) => {
+    emit("backgroundColorChanged", newColor);
+};
 </script>
 
 <style>
@@ -23,6 +43,14 @@ import InputHexaColor from "./InputHexaColor.vue";
     box-shadow: inset rgba(0, 0, 0, 0.11) 0 0 0 1px;
     border-radius: 14px 0 0 14px; /* Sinon bordure coupé */
     min-width: 350px;
+}
+
+.input-container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 24px;
 }
 
 @media screen and (max-width: 764px) {

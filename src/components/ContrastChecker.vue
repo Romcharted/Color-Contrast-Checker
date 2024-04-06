@@ -1,13 +1,31 @@
 <template>
     <div class="contrast-checker">
-        <ContrastCheckerContent />
-        <ContrastCheckerPreview textColor="#112A46" backgroundColor="#ACC8E5" />
+        <ContrastCheckerContent
+            @textColorChanged="updateTextColor"
+            @backgroundColorChanged="updateBackgroundColor"
+        />
+        <ContrastCheckerPreview
+            :textColor="textColor"
+            :backgroundColor="backgroundColor"
+        />
     </div>
 </template>
 
 <script setup lang="ts">
+import { ref } from "vue";
 import ContrastCheckerContent from "./ContrastCheckerContent.vue";
 import ContrastCheckerPreview from "./ContrastCheckerPreview.vue";
+
+let textColor = ref("#FFFFFF");
+let backgroundColor = ref("#000000");
+
+const updateTextColor = (newColor: string) => {
+    textColor.value = newColor;
+};
+
+const updateBackgroundColor = (newColor: string) => {
+    backgroundColor.value = newColor;
+};
 </script>
 
 <style>
