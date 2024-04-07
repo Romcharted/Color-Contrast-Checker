@@ -1,12 +1,25 @@
 <template>
     <div class="input-hexa-color">
         <label>{{ title }}</label>
-        <input
-            type="text"
-            v-model="color"
-            @keyup.enter="verificationEntry"
-            @blur="verificationEntry"
-        />
+        <div class="input-hexa-color_container">
+            <input
+                type="text"
+                v-model="color"
+                @keyup.enter="verificationEntry"
+                @blur="verificationEntry"
+            />
+
+            <ColorPicker
+                format="hex"
+                shape="square"
+                picker-type="chrome"
+                disable-alpha
+                disable-history
+                use-type="pure"
+                lang="En"
+                v-on:update:pureColor="handleColorChange"
+            />
+        </div>
     </div>
 </template>
 
@@ -17,10 +30,8 @@ const props = defineProps({
     defaultValue: String,
     title: String,
 });
-
-const emit = defineEmits(["colorChanged"]);
-
 let color = ref(props.defaultValue || "");
+const emit = defineEmits(["colorChanged"]);
 
 const verificationEntry = () => {
     // Supprimer les caractères non hexadécimaux
@@ -48,11 +59,17 @@ const verificationEntry = () => {
 
 // Permet de convertir un short hex -> hex
 const expandShortHex = (hex: string): string => {
-    // Vérifier si la couleur est une abréviation hexadécimale de trois caractères
+    // Vérifie si la couleur est une abréviation hexadécimale de trois caractères
     if (hex.length === 4 && hex[0] === "#") {
         return "#" + hex[1] + hex[1] + hex[2] + hex[2] + hex[3] + hex[3];
     }
     return hex;
+};
+
+// Gestionnaire d'événements pour la modification de la couleur
+const handleColorChange = (newColor: string) => {
+    color.value = newColor;
+    emit("colorChanged", newColor);
 };
 </script>
 
@@ -86,5 +103,20 @@ const expandShortHex = (hex: string): string => {
 .input-hexa-color input:focus-visible {
     outline: none;
     border: 1px solid #0066ff !important;
+}
+
+.input-hexa-color_container {
+    position: relative;
+}
+
+.vc-color-wrap {
+    height: 30px !important;
+    width: 30px !important;
+    position: absolute !important;
+    right: 8px;
+    top: 8px;
+    border-radius: 6px;
+    box-shadow: inset rgba(0, 0, 0, 0.075) 0 0 0 1px !important;
+    margin: 0 !important;
 }
 </style>

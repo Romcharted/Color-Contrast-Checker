@@ -1,6 +1,6 @@
 <template>
     <div class="app-container">
-        <h1>Color Contrast Checker manque l'animation preview</h1>
+        <h1>Color Contrast Checker</h1>
         <p class="app-desc">
             Calculate the contrast ratio of text and background colors.
         </p>
