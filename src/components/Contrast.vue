@@ -89,6 +89,7 @@ watch(
 
 .contrast-text-rate-container {
     display: flex;
+    flex-wrap: wrap;
     width: 100%;
 }
 

@@ -66,7 +66,6 @@ const changeContrast = () => {
 // Mise à jour du ratio et du score lorsque textColor ou backgroundColor change
 watch([textColor, backgroundColor], () => {
     changeContrast();
-    console.log("fdsfdsf");
 });
 
 changeContrast();
@@ -108,6 +107,13 @@ const updateBackgroundColor = (newColor: string) => {
 @media screen and (max-width: 764px) {
     .contrast-checker-content {
         width: 100%;
+        border-radius: 0px 0 14px 14px;
+    }
+}
+
+@media screen and (max-width: 464px) {
+    .input-container {
+        flex-direction: column;
     }
 }
 </style>
