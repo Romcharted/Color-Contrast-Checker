@@ -27,7 +27,7 @@
 
 <script setup lang="ts">
 const props = defineProps({
-    ratio: String,
+    ratio: Number,
     textRate: String,
     rate: Number,
 });
@@ -75,17 +75,17 @@ const props = defineProps({
     opacity: 1;
 }
 
-.contrast-container[data-rating="1"] .rating-star svg,
-.contrast-container[data-rating="2"] .rating-star svg {
+.contrast[data-rating="1"] .main-contrast-view .rating-star svg,
+.contrast[data-rating="2"] .main-contrast-view .rating-star svg {
     fill: var(--text-rate-level-1);
 }
 
-.contrast-container[data-rating="3"] .rating-star svg {
+.contrast[data-rating="3"] .main-contrast-view .rating-star svg {
     fill: var(--text-rate-level-2);
 }
 
-.contrast-container[data-rating="4"] .rating-star svg,
-.contrast-container[data-rating="5"] .rating-star svg {
+.contrast[data-rating="4"] .main-contrast-view rating-star svg,
+.contrast[data-rating="5"] .main-contrast-view .rating-star svg {
     fill: var(--text-rate-level-3);
 }
 </style>
