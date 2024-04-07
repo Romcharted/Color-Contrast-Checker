@@ -34,9 +34,9 @@ const updateBackgroundColor = (newColor: string) => {
     overflow: hidden;
     display: flex;
     flex-direction: row;
-    align-items: center;
+    align-items: stretch;
     justify-content: center;
-    margin: 100px 0;
+    margin: 50px 0;
     width: 100%;
     max-width: 1200px;
 }

@@ -10,7 +10,8 @@
             repellendus cum aperiam fugiat libero non! Maxime, dolore cupiditate
             quidem id quibusdam voluptatum.
         </p>
-        <span><b>Romcharted</b></span>
+        <span class="small-text">Small Texte (max 18px)</span>
+        <span class="small-text-bold"><b>Small Texte Bold (max 14px)</b></span>
     </div>
 </template>
 
@@ -24,7 +25,6 @@ defineProps({
 <style>
 .contrast-checker-preview {
     width: 50%;
-    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -39,6 +39,14 @@ defineProps({
 
 .contrast-checker-preview p {
     text-align: center;
+}
+
+.small-text {
+    font-size: 18px;
+}
+
+.small-text-bold {
+    font-size: 14px;
 }
 
 @media screen and (max-width: 764px) {

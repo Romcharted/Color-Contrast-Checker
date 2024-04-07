@@ -1,6 +1,6 @@
 <template>
     <div class="app-container">
-        <h1>Color Contrast Checker</h1>
+        <h1>Color Contrast Checker manque l'animation preview</h1>
         <p class="app-desc">
             Calculate the contrast ratio of text and background colors.
         </p>
@@ -26,9 +26,9 @@
             </p>
 
             <a
-                href="https://en.wikipedia.org/wiki/Web_Content_Accessibility_Guidelines"
+                href="https://coolors.co/contrast-checker/ffffff-000000"
                 target="_blank"
-                >Learn more</a
+                >Inspire by Coolors</a
             >
         </div>
     </div>
@@ -42,9 +42,9 @@ import ContrastChecker from "@/components/ContrastChecker.vue";
 .app-container {
     display: flex;
     flex-direction: column;
-    padding: 20px;
+    padding: 60px 20px;
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     align-items: center;
     justify-content: center;
 

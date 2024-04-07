@@ -12,12 +12,15 @@
                 @colorChanged="updateBackgroundColor"
             />
         </div>
+
+        <Contrast :rate="4" />
     </div>
 </template>
 
 <script setup lang="ts">
 import { defineEmits } from "vue";
 import InputHexaColor from "./InputHexaColor.vue";
+import Contrast from "./Contrast.vue";
 
 const emit = defineEmits(["textColorChanged", "backgroundColorChanged"]);
 
@@ -33,12 +36,11 @@ const updateBackgroundColor = (newColor: string) => {
 <style>
 .contrast-checker-content {
     width: 50%;
-    height: 100%;
     padding: 30px;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    align-items: stretch;
+    justify-content: flex-start;
     background-color: var(--background-color);
     box-shadow: inset rgba(0, 0, 0, 0.11) 0 0 0 1px;
     border-radius: 14px 0 0 14px; /* Sinon bordure coupé */

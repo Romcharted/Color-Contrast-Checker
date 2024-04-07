@@ -3,4 +3,11 @@
     --text-color: #000000;
     --text-color-light: #7d7c83;
     --background-color: #ffffff;
+
+    --text-rate-level-1: #5f071c;
+    --text-rate-level-2: #5f5207;
+    --text-rate-level-3: #0d5f07;
+    --background-rate-level-1: #fbd0da;
+    --background-rate-level-2: #fbf5d0;
+    --background-rate-level-3: #d2fbd0;
 }
