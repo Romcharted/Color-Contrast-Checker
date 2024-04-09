@@ -1,9 +1,14 @@
-# Vue 3 + TypeScript + Vite
+# Color Contrast Checker
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+Petit projet en Vue.js 3 qui permet de calculer le ratio de contraste entre deux couleurs, spécifiquement entre la couleur du texte et la couleur d'arrière-plan. Le ratio de contraste est crucial pour garantir que le contenu textuel soit facilement lisible et accessible, en particulier pour les personnes atteintes de déficiences visuelles.
 
-## Recommended Setup
+Vous pouvez accéder au projet en ligne sur [https://color-contrast-picker.netlify.app](https://color-contrast-picker.netlify.app)
 
-- [VS Code](https://code.visualstudio.com/) + [Vue - Official](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (previously Volar) and disable Vetur
+## Fonctionnalités
 
-- Use [vue-tsc](https://github.com/vuejs/language-tools/tree/master/packages/tsc) for performing the same type checking from the command line, or for generating d.ts files for SFCs.
+-   Calcul du Ratio de Contraste: Obtenez instantanément le ratio de contraste entre deux couleurs.
+-   Sélection de Couleurs Facile: Utilisez un sélecteur de couleurs pour choisir les couleurs de texte et d'arrière-plan.
+
+| Vu d'ensemble                                     | Vu d'ensemble avec le picker d'ouvert et un ratio moyen                   |
+| ------------------------------------------------- | ------------------------------------------------------------------------- |
+| ![Vu d'ensemble](./public/contrast_checker_1.png) | ![Vu d'ensemble avec le picker d'ouvert](./public/contrast_checker_2.png) |
